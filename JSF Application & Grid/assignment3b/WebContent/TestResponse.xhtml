@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="title">JSF Response Page</ui:define>	
+	<br/>
+	<ui:define name="content">
+	<div align="center">
+	Hello #{user.firstName} #{user.lastName}. Your orders are:
+	<br/> 
+	
+	<!-- JSF Data Table of the Orders -->
+	<h:dataTable value="#{orders.listOfOrders}" var="order" styleClass = "orderTable" headerClass = "orderTableHeader" rowClasses = "orderTableOddRow,orderTableEvenRow">
+		<h:column> 
+			<f:facet name="header">Order Number</f:facet>
+			#{order.orderNumber}
+		</h:column>
+		<h:column> 
+			<f:facet name="header">Product Name</f:facet>
+			#{order.productName}
+		</h:column>
+		<h:column> 
+			<f:facet name="header">Price</f:facet>
+			#{order.price}
+		</h:column>
+		<h:column> 
+			<f:facet name="header">Quantity</f:facet>
+			#{order.quantity}
+		</h:column>
+	</h:dataTable>
+
+	
+	<!-- button that navigates the user back to the TestForm page -->
+	<h:button outcome="TestForm.xhtml" value="Test Form" />
+	</div>
+	</ui:define>
+	</ui:composition>
+</body>
+</html>
