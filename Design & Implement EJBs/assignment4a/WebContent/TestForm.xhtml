@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="title">JSF Login Page</ui:define>
+	<br/>
+	<ui:define name="content">
+	<div align="center">
+
+	<!-- <h1>Test Form</h1>  -->
+
+	<!-- create a JSF form  -->
+	<h:form>
+		<!-- create JSF input text control with values bound to the User managed bean -->
+		First Name: <h:inputText id="firstName" value="#{user.firstName}" title="" />
+		
+		<!-- include single data validation message for firstName-->
+		<h:message for = "firstName"/>
+		
+		<br />
+		Last Name: <h:inputText id="lastName" value="#{user.lastName}" title="" />
+		
+		<!-- include single data validation message for lastName-->
+		<h:message for = "lastName"/>
+		<br />
+		
+		<!-- create a JSF command button whose action invokes the FormController.onSubmit() -->
+		<h:commandButton value="Submit" action="#{formController.onSubmit(user)}" />
+
+		<!-- create a JSF command button whose action invokes the FormController.onFlash() -->
+		<h:commandButton value="Flash" action="#{formController.onFlash(user)}" />
+		
+	<!-- include ALL data validation messages -->
+	<h:messages/>
+	</h:form>
+	</div>
+	</ui:define>
+	</ui:composition>
+</h:body>
+</html>
