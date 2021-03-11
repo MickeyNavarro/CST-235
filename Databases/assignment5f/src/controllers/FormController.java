@@ -34,13 +34,12 @@ public class FormController {
 		// call the setTimer() method 
 		timer.setTimer(10000);
 		
-		System.out.println("-------------->About to process service.getOrders() in FormController...");
+		//System.out.println("-------------->About to process service.getOrders() in FormController...");
 
 		// call the getOrders() method to get all the orders from the db
 		service.getOrders(); 
 		
-		System.out.println("-------------->Finished processing service.getOrders() in FormController...");
-
+		//System.out.println("-------------->Finished processing service.getOrders() in FormController...");
 		
 		// send the User managed bean to the TestResponse view 
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", user); 

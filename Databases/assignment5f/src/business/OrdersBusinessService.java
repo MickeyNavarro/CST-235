@@ -57,4 +57,24 @@ public class OrdersBusinessService implements OrdersBusinessInterface {
 		//this.orders = orders; 
 	}
 
+	@Override
+	public Order getOrdersById(int id) {
+		return service.findById(id);
+	}
+
+	@Override
+	public void createOrder(Order order) {
+		service.create(order);	
+	}
+
+	@Override
+	public void updateOrder(Order order) {
+		service.update(order);
+	}
+
+	@Override
+	public void deleteOrder(Order order) {
+		service.delete(order);
+	}
+
 }
