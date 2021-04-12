@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<body>
+<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="title">Order Response Page</ui:define>	
+	<br/>
+	<ui:define name="content">
+	<div align="center">
+	<p>Hello #{user.firstName}, your order was processed!</p>	
+	<br/> 
+	
+	<!-- button that navigates the user back to the TestResponse page -->
+	<h:button outcome="TestResponse.xhtml" value="Test Response" />
+	</div>
+	</ui:define>
+	</ui:composition>
+</body>
+</html>
