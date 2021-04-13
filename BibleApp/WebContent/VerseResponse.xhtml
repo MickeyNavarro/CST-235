@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="title">Bible Verse Found</ui:define>	
+	<br/>
+	<ui:define name="content">
+	<div align="center">
+	<h3>Here is what we found... </h3>
+		#{bible.bookName} #{bible.chapterNo}:#{bible.verseNo}<br/> 
+	
+	<p style="font-weight: bold">#{bible.fullVerse}</p>
+
+	<!-- button that navigates the user back to the TestForm page -->
+	<h:button outcome="VerseForm.xhtml" value="Verse Form" />
+		
+	</div>
+	</ui:define>
+	</ui:composition>
+</body>
+</html>

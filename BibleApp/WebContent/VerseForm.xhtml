@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+	<ui:define name="title">Search for a Bible Verse</ui:define>
+	<br/>
+	<ui:define name="content">
+	<div align="center">
+
+
+	<!-- create a JSF form  -->
+	<h:form>
+		<!-- create JSF input text control with values bound to the User managed bean -->
+		Book Name: <h:inputText value="#{bible.bookName}" title= "bookName"/><h:message for="bookName" /><br/><br/>
+		
+		<!-- include single data validation message for bookName-->
+		<h:message for = "bookName"/>
+		
+		<br />
+		Chapter Number: <h:inputText value="#{bible.chapterNo}" title= "chapterNo"/><h:message for="chapterNo" /><br/><br/>
+		
+		<!-- include single data validation message for chapterNo-->
+		<h:message for = "chapterNo"/>
+		<br />
+		Verse Number: <h:inputText value="#{bible.verseNo}" title= "verseNo"/><h:message for="verseNo" /><br/><br/>
+		
+		<!-- include single data validation message for verseNo-->
+		<h:message for = "verseNo"/>
+		<br />
+		
+		<!-- create a JSF command button whose action invokes the BibleController.onSubmit() -->
+		<h:commandButton value="Submit" action="#{bibleController.onSubmit(bible)}" />
+
+		
+	<!-- include ALL data validation messages -->
+	<h:messages/>
+	</h:form>
+	</div>
+	</ui:define>
+	</ui:composition>
+</h:body>
+</html>
